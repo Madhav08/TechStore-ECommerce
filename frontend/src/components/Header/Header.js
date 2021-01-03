@@ -22,7 +22,9 @@ const Header = () => {
   return (
     <>
       <NavBar>
-        <NavBarLogo src={logo} />
+        <NavBarLink>
+          <NavBarLogo src={logo} />
+        </NavBarLink>
         <NavBarIcon onClick={handleMenuClick}>
           {menuIcon ? <NavBarHamburger /> : <NavBarX />}
         </NavBarIcon>

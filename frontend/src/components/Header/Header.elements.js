@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { MdDehaze, MdClose } from 'react-icons/md';
 
-const mainColor = '#080F58';
-const secondaryColor = '#EC336B';
+const mainColor = '#364f6b';
+const secondaryColor = '#3fc1c9';
 
 export const NavBar = styled.div`
   background-color: ${mainColor};
@@ -12,20 +12,27 @@ export const NavBar = styled.div`
   align-items: center;
   justify-content: space-between;
   color: #fff;
-  padding: 18px;
+  padding: 18px 80px;
+
+  @media only screen and (max-width: 960px) {
+    padding: 18px 20px;
+  }
 `;
 
 export const NavBarLogo = styled.img`
   width: 50px;
   height: 50px;
-  margin-left: 24px;
+  transition: all 1s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const NavBarMenu = styled.ul`
   list-style: none;
   display: flex;
   justify-content: space-between;
-  margin-right: 120px;
   align-items: center;
   transition: all 0.5s ease-out;
 
@@ -57,9 +64,7 @@ export const NavBarLink = styled(Link)`
   ${(props) =>
     props.btn &&
     css`
-      &:hover {
-        color: ${mainColor};
-      }
+      color: black;
     `}
 `;
 
@@ -78,7 +83,8 @@ export const NavBarButton = styled.button`
   &:hover {
     background-color: #cbf4fb;
     border: 1px solid #cbf4fb;
-    color: ${mainColor};
+    transform: translateY(-3px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0, 0.25);
   }
 
   @media only screen and (max-width: 960px) {
