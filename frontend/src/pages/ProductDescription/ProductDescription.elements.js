@@ -8,12 +8,30 @@ export const ProductDescriptionScreen = styled.div`
 export const ProductDescriptionContainer = styled.div`
   margin: 14px 80px;
   display: grid;
+  grid-gap: 12px;
   grid-template-columns: repeat(3, 1fr);
+
+  @media only screen and (max-width: 1150px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 960px) {
+    margin: 14px 20px;
+  }
+
+  @media only screen and (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ProductImage = styled.img`
   height: 390px;
   width: 430px;
+
+  @media only screen and (max-width: 500px) {
+    height: 370px;
+    width: 340px;
+  }
 `;
 
 export const GoBackText = styled(Link)`
@@ -35,6 +53,14 @@ export const ProductBuy = styled.div`
   border: 1px solid lightgray;
   width: 280px;
   height: 155px;
+
+  @media only screen and (max-width: 960px) {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  @media only screen and (max-width: 760px) {
+    grid-area: 3 / 1 / 4 / 1;
+  }
 `;
 
 export const ProductName = styled.p`
