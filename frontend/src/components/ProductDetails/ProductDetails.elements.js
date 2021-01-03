@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ProductDetailsContainer = styled.div`
   border: 1px solid lightgray;
@@ -9,6 +10,15 @@ export const ProductImage = styled.img`
   padding: 12px;
   height: 285px;
   width: 320px;
+`;
+
+export const ProductLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const ProductDesc = styled.p`

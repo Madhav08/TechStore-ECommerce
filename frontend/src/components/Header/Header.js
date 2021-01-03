@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from '../../images/online-shop.png';
 import {
   NavBar,
   NavBarLogo,
@@ -22,8 +21,8 @@ const Header = () => {
   return (
     <>
       <NavBar>
-        <NavBarLink>
-          <NavBarLogo src={logo} />
+        <NavBarLink to='/'>
+          <NavBarLogo src={'/images/online-shop.png'} />
         </NavBarLink>
         <NavBarIcon onClick={handleMenuClick}>
           {menuIcon ? <NavBarHamburger /> : <NavBarX />}

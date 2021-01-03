@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const HomeScreen = styled.div`
+  margin-top: 95px;
+`;
+
 export const HomeContainer = styled.div`
   margin: 14px 80px;
   display: grid;

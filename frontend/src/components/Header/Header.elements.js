@@ -8,11 +8,15 @@ const secondaryColor = '#3fc1c9';
 export const NavBar = styled.div`
   background-color: ${mainColor};
   height: 80px;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #fff;
   padding: 18px 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   @media only screen and (max-width: 960px) {
     padding: 18px 20px;
