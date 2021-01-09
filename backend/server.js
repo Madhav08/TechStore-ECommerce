@@ -3,14 +3,14 @@ import dotenv from 'dotenv';
 
 import connectDb from './config/db.js';
 
+import productRoute from './routes/productRoutes.js';
+
 dotenv.config();
 connectDb();
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World ✔ !!');
-});
+app.use('/api/products', productRoute);
 
 app.listen(
   process.env.PORT,
