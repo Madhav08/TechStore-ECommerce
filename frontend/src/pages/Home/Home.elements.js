@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ReactLoading from 'react-loading';
 
 export const HomeScreen = styled.div`
   margin-top: 95px;
@@ -35,4 +36,8 @@ export const HomeHeading = styled.h3`
   @media screen and (max-width: 760px) {
     margin: 14px 20px;
   }
+`;
+
+export const Loading = styled(ReactLoading)`
+  margin: 140px 40vw;
 `;
