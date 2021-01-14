@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ProductDetails from '../../components/ProductDetails/ProductDetails';
-import {
-  HomeContainer,
-  HomeHeading,
-  HomeScreen,
-  Loading,
-} from './Home.elements';
+import Error from '../../components/Error/Error';
+import Loader from '../../components/Loader/Loader';
+import { HomeContainer, HomeHeading, HomeScreen } from './Home.elements';
 import { listProducts } from '../../redux/actions/productAction';
 
 const Home = () => {
@@ -24,7 +21,9 @@ const Home = () => {
       <HomeHeading>LATEST PRODUCTS</HomeHeading>
       <HomeContainer>
         {loading ? (
-          <Loading type={'spin'} color='#364F6B' />
+          <Loader />
+        ) : error ? (
+          <Error />
         ) : (
           products.map((product) => (
             <ProductDetails

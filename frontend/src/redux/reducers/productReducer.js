@@ -15,6 +15,7 @@ const productReducer = (state = { products: [] }, action) => {
       return {
         ...state,
         loading: false,
+        error: false,
         products: action.payload,
       };
     case PRODUCT_REQUEST_FAIL:
