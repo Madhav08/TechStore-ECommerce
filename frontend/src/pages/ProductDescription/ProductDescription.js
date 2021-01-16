@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   ProductDescriptionScreen,
@@ -14,6 +14,9 @@ import {
   ProductStatus,
   ProductSpan,
   ProductBtn,
+  ProductQty,
+  AddIcon,
+  MinusIcon,
 } from './ProductDescription.elements';
 import { productDetails } from '../../redux/actions/productAction';
 import Loader from '../../components/Loader/Loader';
@@ -21,7 +24,8 @@ import Error from '../../components/Error/Error';
 // https://www.npmjs.com/package/react-image-magnify
 
 const ProductDescription = ({ match }) => {
-  // const product = products.find((p) => p._id === match.params.id);
+  const [qty, setQty] = useState(0);
+
   const dispatch = useDispatch();
 
   const productDetail = useSelector((state) => state.productDetails);
@@ -31,6 +35,22 @@ const ProductDescription = ({ match }) => {
     dispatch(productDetails(match.params.id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
+
+  const handleAdd = () => {
+    if (qty === product.countInStock) {
+      setQty(qty);
+    } else {
+      setQty(qty + 1);
+    }
+  };
+
+  const handleMinus = () => {
+    if (qty === 0) {
+      setQty(0);
+    } else {
+      setQty(qty - 1);
+    }
+  };
 
   return (
     <ProductDescriptionScreen>
@@ -53,12 +73,19 @@ const ProductDescription = ({ match }) => {
               Price: <ProductSpan>&#x24;{product.price}</ProductSpan>
             </ProductPrice>
             <ProductStatus>
-              Status:{' '}
+              Status:
               <ProductSpan>
                 {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
               </ProductSpan>
             </ProductStatus>
-            <ProductBtn>Add To Cart</ProductBtn>
+            <ProductQty>
+              <MinusIcon onClick={handleMinus} />
+              {qty}
+              <AddIcon onClick={handleAdd} />
+            </ProductQty>
+            <ProductBtn disabled={true ? product.countInStock === 0 : false}>
+              Add To Cart
+            </ProductBtn>
           </ProductBuy>
         </ProductDescriptionContainer>
       )}

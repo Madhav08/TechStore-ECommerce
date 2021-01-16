@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { CgMathPlus, CgMathMinus } from 'react-icons/cg';
 
 export const ProductDescriptionScreen = styled.div`
   margin-top: 95px;
@@ -52,7 +53,7 @@ export const ProductInfo = styled.div`
 export const ProductBuy = styled.div`
   border: 1px solid lightgray;
   width: 280px;
-  height: 155px;
+  height: 200px;
 
   @media only screen and (max-width: 960px) {
     grid-area: 1 / 2 / 2 / 3;
@@ -107,5 +108,55 @@ export const ProductBtn = styled.button`
   &:hover {
     background: #364f6b;
     color: white;
+
+    ${(props) =>
+      props.disabled &&
+      css`
+        background: darkgrey;
+        color: black;
+      `}
+  }
+
+  ${(props) =>
+    props.disabled &&
+    css`
+      background: lightgrey;
+      border: lightgrey;
+      color: black;
+      cursor: default;
+    `}
+`;
+
+export const ProductQty = styled(ProductPrice)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.4rem;
+`;
+
+export const AddIcon = styled(CgMathPlus)`
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 50%;
+  border: 1px solid #4dc6ce;
+  margin-left: 16px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lightgray;
+  }
+`;
+
+export const MinusIcon = styled(CgMathMinus)`
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 50%;
+  border: 1px solid #4dc6ce;
+  margin-right: 16px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lightgray;
   }
 `;
