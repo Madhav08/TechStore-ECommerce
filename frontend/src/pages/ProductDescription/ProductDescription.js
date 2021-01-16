@@ -23,7 +23,7 @@ import Loader from '../../components/Loader/Loader';
 import Error from '../../components/Error/Error';
 // https://www.npmjs.com/package/react-image-magnify
 
-const ProductDescription = ({ match }) => {
+const ProductDescription = ({ history, match }) => {
   const [qty, setQty] = useState(0);
 
   const dispatch = useDispatch();
@@ -50,6 +50,10 @@ const ProductDescription = ({ match }) => {
     } else {
       setQty(qty - 1);
     }
+  };
+
+  const addToCardHandler = () => {
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
   return (
@@ -83,7 +87,12 @@ const ProductDescription = ({ match }) => {
               {qty}
               <AddIcon onClick={handleAdd} />
             </ProductQty>
-            <ProductBtn disabled={true ? product.countInStock === 0 : false}>
+            <ProductBtn
+              onClick={addToCardHandler}
+              disabled={
+                product.countInStock === 0 ? true : qty === 0 ? true : false
+              }
+            >
               Add To Cart
             </ProductBtn>
           </ProductBuy>

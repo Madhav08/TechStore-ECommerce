@@ -133,6 +133,7 @@ export const ProductQty = styled(ProductPrice)`
   justify-content: center;
   width: 100%;
   font-size: 1.4rem;
+  user-select: none;
 `;
 
 export const AddIcon = styled(CgMathPlus)`
@@ -141,6 +142,7 @@ export const AddIcon = styled(CgMathPlus)`
   border-radius: 50%;
   border: 1px solid #4dc6ce;
   margin-left: 16px;
+  user-select: none;
 
   &:hover {
     cursor: pointer;
@@ -154,6 +156,7 @@ export const MinusIcon = styled(CgMathMinus)`
   border-radius: 50%;
   border: 1px solid #4dc6ce;
   margin-right: 16px;
+  user-select: none;
 
   &:hover {
     cursor: pointer;
