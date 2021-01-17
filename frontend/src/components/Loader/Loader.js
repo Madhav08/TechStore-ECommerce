@@ -6,6 +6,6 @@ const Loading = styled(ReactLoading)`
   margin: 140px 40vw;
 `;
 
-const Loader = () => <Loading type={'spin'} color='#364F6B' />;
+const Loader = () => <Loading type={'bubbles'} color='#364F6B' />;
 
 export default Loader;
