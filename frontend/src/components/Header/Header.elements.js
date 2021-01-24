@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { MdDehaze, MdClose } from 'react-icons/md';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const mainColor = '#364f6b';
 const secondaryColor = '#3fc1c9';
@@ -114,3 +115,5 @@ export const NavBarHamburger = styled(MdDehaze)`
 export const NavBarX = styled(MdClose)`
   font-size: 44px;
 `;
+
+export const CartIcon = styled(ShoppingCartIcon)``;

@@ -9,6 +9,7 @@ import {
   NavBarHamburger,
   NavBarX,
   NavBarIcon,
+  CartIcon,
 } from './Header.elements';
 
 const Header = () => {
@@ -29,13 +30,15 @@ const Header = () => {
         </NavBarIcon>
         <NavBarMenu menuIcon={menuIcon}>
           <NavBarItem>
-            <NavBarLink>Home</NavBarLink>
+            <NavBarLink to='/'>Home</NavBarLink>
           </NavBarItem>
           <NavBarItem>
-            <NavBarLink>Home</NavBarLink>
+            <NavBarLink to='/'>Home</NavBarLink>
           </NavBarItem>
           <NavBarItem>
-            <NavBarLink>Home</NavBarLink>
+            <NavBarLink to='/cart'>
+              <CartIcon />
+            </NavBarLink>
           </NavBarItem>
           <NavBarButton>
             <NavBarLink btn>Login</NavBarLink>
