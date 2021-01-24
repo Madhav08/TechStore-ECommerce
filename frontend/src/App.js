@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import ProductDescription from './pages/ProductDescription/ProductDescription';
+import CartScreen from './pages/Cart/Cart';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/products/:id' component={ProductDescription} />
+        <Route exact path='/cart/:id?' component={CartScreen} />
       </Switch>
     </Router>
   );

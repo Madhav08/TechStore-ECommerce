@@ -46,12 +46,11 @@ export const NavBarMenu = styled.ul`
     justify-content: space-around;
     align-items: center;
     position: absolute;
-    top: 0;
     left: 0;
     background-color: ${mainColor};
-    height: 100vh;
+    height: 70vh;
     width: 100vw;
-    left: ${(props) => (props.menuIcon ? '-100%' : 0)};
+    top: ${(props) => (props.menuIcon ? '-712%' : '79px')};
   }
 `;
 
