@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import './Header.style.css';
+import Badge from '@material-ui/core/Badge';
 import {
   NavBar,
   NavBarLogo,
@@ -30,21 +32,21 @@ const Header = () => {
         </NavBarIcon>
         <NavBarMenu menuIcon={menuIcon}>
           <NavBarItem>
-            <NavBarLink to='/'>Home</NavBarLink>
-          </NavBarItem>
-          <NavBarItem>
-            <NavBarLink to='/'>Home</NavBarLink>
-          </NavBarItem>
-          <NavBarItem>
             <NavBarLink to='/cart'>
-              <CartIcon />
+              <Badge badgeContent={1}>
+                <CartIcon />
+              </Badge>
             </NavBarLink>
           </NavBarItem>
           <NavBarButton>
-            <NavBarLink btn>Login</NavBarLink>
+            <NavBarLink btn to='/'>
+              Login
+            </NavBarLink>
           </NavBarButton>
           <NavBarButton>
-            <NavBarLink btn>Register</NavBarLink>
+            <NavBarLink btn to='/'>
+              Register
+            </NavBarLink>
           </NavBarButton>
         </NavBarMenu>
       </NavBar>

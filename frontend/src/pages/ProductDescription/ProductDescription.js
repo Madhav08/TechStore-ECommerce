@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import {
   ProductDescriptionScreen,
   ProductImage,
@@ -24,6 +25,8 @@ import Error from '../../components/Error/Error';
 // https://www.npmjs.com/package/react-image-magnify
 
 const ProductDescription = ({ history, match }) => {
+  const routerHistory = useHistory();
+
   const [qty, setQty] = useState(0);
 
   const dispatch = useDispatch();
@@ -58,7 +61,7 @@ const ProductDescription = ({ history, match }) => {
 
   return (
     <ProductDescriptionScreen>
-      <GoBackText to='/'>Go Back</GoBackText>
+      <GoBackText to={() => routerHistory.goBack()}>Go Back</GoBackText>
       {loading ? (
         <Loader />
       ) : error ? (

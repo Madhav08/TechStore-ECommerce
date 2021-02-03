@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   CartScreenContainer,
   CartScreenDiv,
+  CartHeading,
   ProductDesc,
   ProductImg,
   ProductName,
@@ -14,15 +15,18 @@ import products from '../../products';
 const CartScreen = () => {
   return (
     <CartScreenContainer>
+      <CartHeading>CART</CartHeading>
       <CartScreenDiv>
-        {products.map((product) => {
+        {products.map((product) => (
           <ProductDesc>
             <ProductImg src={product.image}></ProductImg>
-            <ProductName>{product.name}</ProductName>
-            <ProductPrice>{product.price}</ProductPrice>
+            <ProductName to={`/products/${product._id}`}>
+              {product.name}
+            </ProductName>
+            <ProductPrice>${product.price}</ProductPrice>
             <ProductQty>{3}</ProductQty>
-          </ProductDesc>;
-        })}
+          </ProductDesc>
+        ))}
       </CartScreenDiv>
     </CartScreenContainer>
   );

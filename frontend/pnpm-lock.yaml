@@ -1,6 +1,7 @@
 dependencies:
   '@material-ui/core': 4.11.3_react-dom@17.0.1+react@17.0.1
   '@material-ui/icons': 4.11.2_c640d2d0176bfcab1d99b942ffa7ebe7
+  '@material-ui/styles': 4.11.3_react-dom@17.0.1+react@17.0.1
   '@testing-library/jest-dom': 5.11.9
   '@testing-library/react': 11.2.3_react-dom@17.0.1+react@17.0.1
   '@testing-library/user-event': 12.6.2
@@ -12693,6 +12694,7 @@ packages:
 specifiers:
   '@material-ui/core': ^4.11.3
   '@material-ui/icons': ^4.11.2
+  '@material-ui/styles': ^4.11.3
   '@testing-library/jest-dom': ^5.11.4
   '@testing-library/react': ^11.1.0
   '@testing-library/user-event': ^12.1.10

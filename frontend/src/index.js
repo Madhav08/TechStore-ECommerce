@@ -7,7 +7,9 @@ import store from './redux/store';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div className='xl-screen'>
+      <App />
+    </div>
   </Provider>,
   document.getElementById('root')
 );
